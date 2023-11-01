@@ -1,4 +1,4 @@
-# autocompolete
+# autocomplete
 1. mock api data
 1. use vanilla js to make autocomplete (dom, no react)
 1. user type in text, filter and sort data
