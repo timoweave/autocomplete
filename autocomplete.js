@@ -32,6 +32,30 @@ async function getTextList(searchText, delay = 30) {
     "beta 23",
     "beta 24",
     "beta 25",
+    "charlie 40",
+    "charlie 41",
+    "charlie 42",
+    "charlie 43",
+    "charlie 44",
+    "charlie 45",
+    "delta 80",
+    "delta 81",
+    "delta 82",
+    "delta 83",
+    "delta 84",
+    "delta 85",
+    "echo 50",
+    "echo 51",
+    "echo 52",
+    "echo 53",
+    "echo 54",
+    "echo 55",
+    "foxtrot 60",
+    "foxtrot 61",
+    "foxtrot 62",
+    "foxtrot 63",
+    "foxtrot 64",
+    "foxtrot 65",
     "hello 30",
     "hello 31",
     "hello 32",
@@ -57,7 +81,7 @@ function addChildElements(parentElement, childElements) {
   childElements.forEach((element) => parentElement.appendChild(element));
 }
 
-function makeLiElement(text) {
+function makeChildElement(text) {
   const element = document.createElement("li");
   element.innerHTML = text;
   return element;
@@ -69,7 +93,7 @@ export function setupAutocomplete(searchTextID, matchedTextID) {
 
   const search = (event) => {
     getTextList(event.target.value).then((textList) => {
-      const macthedElementList = textList.map((t) => makeLiElement(t));
+      const macthedElementList = textList.map((t) => makeChildElement(t));
       removeChildElements(output);
       addChildElements(output, macthedElementList);
     });
