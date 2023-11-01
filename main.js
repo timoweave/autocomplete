@@ -1,14 +1,10 @@
 import "./style.css";
-import { setupAutocomplete } from "./autocomplete";
+import { createAutocompleteComponent, fetchTextList } from "./autocomplete";
 
-document.querySelector("#app").innerHTML = `
-  <div>
-    <h1>Hello Autocomplete!</h1>
-    <div class="card">
-      <input type="text" id="search_text"/>
-      <ol id="matched_result"></ol>
-    </div>
-  </div>
-`;
-
-setupAutocomplete("#search_text", "#matched_result");
+const app = document.querySelector("#app");
+app.innerHTML = createAutocompleteComponent({
+  ID: "autocomplete_1",
+  searchID: "search_input",
+  resultID: "search_result",
+  fetch: fetchTextList,
+});
