@@ -1,10 +1,11 @@
 import "./style.css";
-import { createAutocompleteComponent, fetchTextList } from "./autocomplete";
+import { createAutocompleteComponent } from "./autocomplete";
+import { fetchTextList } from "./mockAPI";
 
-const app = document.querySelector("#app");
+const app = document.getElementById("app");
 app.innerHTML = createAutocompleteComponent({
-  ID: "autocomplete_1",
-  searchID: "search_input",
-  resultID: "search_result",
+  ID: "1",
+  searchID: "search",
+  resultID: "result",
   fetch: fetchTextList,
 });
